@@ -16,9 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from message import views
+from django.views import static
+from django.conf import settings
+from django.conf.urls import url
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),  # 默认主页路由
-    path('message/', views.message, name='message')  # 留言板路由
+    path('message/', views.show_message, name='message'),  # 留言板路由
+    url(r'^static/(?P<path>.*)$', static.serve,
+        {'document_root': settings.STATIC_ROOT}, name='static'),
 ]
