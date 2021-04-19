@@ -17,7 +17,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-# Application definition
+# 注册应用
 
 INSTALLED_APPS = [
     'simpleui',
@@ -27,7 +27,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'app.apps.AppConfig',
+    'home.apps.AppConfig',
+    'message'
 ]
 
 MIDDLEWARE = [
